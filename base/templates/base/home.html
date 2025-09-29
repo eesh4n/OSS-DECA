@@ -1,187 +1,130 @@
+{% extends "base/base.html" %}
 {% load static %}
 
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Oakridge DECA — Inspire. Compete. Lead.</title>
-  <meta name="description" content="Oakridge Secondary School DECA Chapter — student leaders in business, marketing, and entrepreneurship.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="{% static 'base/style.css' %}">
-  <link rel="icon" href="favicon.svg">
-</head>
-<body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="#">
-        <img src="{% static 'base/oakridge-deca-logo.png' %}" alt="Oakridge DECA logo" class="logo">
-        <span class="brand-text">Oakridge DECA</span>
-      </a>
+{% block title %}Oakridge DECA | Home{% endblock %}
 
-      <nav class="nav" aria-label="Primary navigation">
-        <button class="nav-toggle" aria-expanded="false" aria-controls="primary-menu">Menu</button>
-        <ul id="primary-menu" class="nav-list">
-          <li><a href="#about">About</a></li>
-          <li><a href="#events">Events</a></li>
-          <li><a href="#join">Join</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
+{% block content %}
 
-      <form class="search-form" role="search">
-        <input type="search" placeholder="Search..." aria-label="Search">
-      </form>
-
-      <a class="btn btn-ghost" href="#join">Join Us</a>
+<!-- Hero Section -->
+<header class="hero">
+    <div class="hero-overlay">
+        <h1>Oakridge DECA</h1>
     </div>
-  </header>
+</header>
 
-  <main>
-    <section class="hero">
-      <div class="container hero-grid">
-        <div class="hero-copy">
-          <h1>Compete. Learn. Lead.</h1>
-          <p class="lead">Oakridge DECA prepares emerging leaders and entrepreneurs for careers in marketing, finance, hospitality and management through real-world competitions, workshops, and leadership opportunities.</p>
-          <div class="hero-ctas">
-            <a class="btn btn-primary" href="#join">Become a Member</a>
-            <a class="btn btn-outline" href="#events">Upcoming Events</a>
-          </div>
-          <ul class="trust-list">
-            <li>🏆 Provincial qualifiers</li>
-            <li>💼 Professional mentorship</li>
-            <li>🤝 Community impact projects</li>
-          </ul>
-        </div>
+<!-- About Section -->
+<section id="about" class="about-section">
+  
+    <div class="floating-shape shape1"></div>
+    <div class="floating-shape shape2"></div>
+    <div class="floating-shape shape3"></div>
+    <div class="floating-shape shape4"></div>
+    <div class="floating-shape shape5"></div>
+    <div class="floating-shape shape6"></div>
 
-        <div class="hero-image" aria-hidden="true">
-          <img src="hero-placeholder.jpg" alt="Students presenting a DECA project" loading="lazy">
-        </div>
-      </div>
-    </section>
-
-    <section id="about" class="container about">
-      <h2>About Oakridge DECA</h2>
-      <p>We are a student-run chapter focused on skill-building, competitive events, and professional development. Members learn through case studies, team projects, and community outreach.</p>
-      <div class="features">
-        <article class="feature">
-          <h3>Workshops</h3>
-          <p>Weekly training in case writing, public speaking, and industry fundamentals.</p>
-        </article>
-        <article class="feature">
-          <h3>Competitions</h3>
-          <p>Local, regional, and provincial competitions with coaching and prep sessions.</p>
-        </article>
-        <article class="feature">
-          <h3>Leadership</h3>
-          <p>Opportunities to organize events, run committees, and mentor new members.</p>
-        </article>
-      </div>
-    </section>
-
-    <section id="events" class="container events">
-      <div class="events-header">
-        <h2>Upcoming Events</h2>
-        <p>Join practices, workshops, and competitions — don’t miss the next meeting.</p>
-      </div>
-
-      <ul class="event-list">
-        <li class="event-card">
-          <div class="date">Sep 20</div>
-          <div class="event-body">
-            <h4>Intro to DECA — New Member Night</h4>
-            <p>Overview of what DECA does and how to get involved. (Auditorium, 6:30 PM)</p>
-          </div>
-        </li>
-
-        <li class="event-card">
-          <div class="date">Oct 05</div>
-          <div class="event-body">
-            <h4>Case Lab Workshop</h4>
-            <p>Hands-on practice solving case studies with alumni coaches. (Room 112, 4 PM)</p>
-          </div>
-        </li>
-
-        <li class="event-card">
-          <div class="date">Nov 08</div>
-          <div class="event-body">
-            <h4>Regional Competition</h4>
-            <p>Students compete at the regional level — all members encouraged to attend.</p>
-          </div>
-        </li>
-      </ul>
-    </section>
-
-    <section id="join" class="container join">
-      <h2>Join Oakridge DECA</h2>
-      <p>Membership is open to all students. No prior experience required — bring curiosity and commitment.</p>
-
-      <form class="join-form" action="#" method="post" onsubmit="alert('Thanks — form submission is a demo. Replace with your backend or a Google Form link.'); return false;">
-        <div class="form-row">
-          <label for="name">Full Name</label>
-          <input id="name" name="name" type="text" required>
-        </div>
-        <div class="form-row">
-          <label for="grade">Grade</label>
-          <select id="grade" name="grade">
-            <option>9</option>
-            <option>10</option>
-            <option>11</option>
-            <option>12</option>
-          </select>
-        </div>
-        <div class="form-row">
-          <label for="email">School Email</label>
-          <input id="email" name="email" type="email" required>
-        </div>
-        <div class="form-actions">
-          <button class="btn btn-primary" type="submit">Sign Up</button>
-          <a class="btn btn-ghost" href="mailto:deca@oakridge.ca">Email Us</a>
-        </div>
-      </form>
-
-    </section>
-
-    <section id="contact" class="container contact">
-      <h2>Contact & Social</h2>
-      <p>Questions? Reach out to our advisor or follow us for updates.</p>
-      <ul class="contact-grid">
-        <li>
-          <strong>Advisor</strong>
-          <p>Ms. Priya Sharma — <a href="mailto:psharma@oakridge.ca">psharma@oakridge.ca</a></p>
-        </li>
-        <li>
-          <strong>Instagram</strong>
-          <p><a href="#">@oakridge_deca</a></p>
-        </li>
-        <li>
-          <strong>Student Exec</strong>
-          <p>President: Alex R., VP: Taylor M.</p>
-        </li>
-      </ul>
-    </section>
-
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <p>© <span id="year"></span> Oakridge DECA — All rights reserved.</p>
-      <p class="small">Built with school spirit. Replace placeholder images and email addresses before publishing.</p>
+  <div class="about-container">
+    <div class="about-image">
+      <img src="{% static 'base/deca-group-pic.jpg' %}" alt="Oakridge DECA Team">
     </div>
-  </footer>
 
-  <script>
-    // Simple small JS for nav toggle and current year
-    document.getElementById('year').textContent = new Date().getFullYear();
-    const toggle = document.querySelector('.nav-toggle');
-    const menu = document.getElementById('primary-menu');
-    toggle.addEventListener('click', () => {
-      const expanded = toggle.getAttribute('aria-expanded') === 'true' || false;
-      toggle.setAttribute('aria-expanded', !expanded);
-      menu.classList.toggle('open');
-    });
-  </script>
-</body>
-</html>
+    <div class="about-content">
+      <h2>About Us</h2>
+      <h3>Inspiring Future Leaders</h3>
+      <p>
+        Oakridge DECA is a student-led chapter dedicated to developing
+        leadership, communication, and business skills through competition,
+        collaboration, and community involvement. 
+      </p>
+      <p>
+        We empower students to explore careers in business, marketing, finance,
+        and entrepreneurship while building confidence and lifelong skills.
+      </p>
+
+      <div class="about-highlights">
+        <div><i class="fa-solid fa-lightbulb"></i> Leadership</div>
+        <div><i class="fa-solid fa-handshake"></i> Collaboration</div>
+        <div><i class="fa-solid fa-briefcase"></i> Entrepreneurship</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials Section -->
+<section id="testimonials" class="testimonials-section">
+  <div class="testimonials-container">
+    <h2>What Our Members Say</h2>
+    <div class="testimonial-grid">
+      <div class="testimonial-card">
+        <p class="testimonial-text">
+          <em> "Being part of Oakridge DECA taught me how to lead, listen, and grow, all while having a lot of fun.” </em>
+        </p>
+        <div class="testimonial-author">
+          <img src="{% static 'base/member1.jpg' %}" alt="Member 1">
+          <div>
+            <h4>Connor L.</h4>
+            <span>Grade 12, Co-President</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <p class="testimonial-text">
+          <em>"Oakridge DECA is a tight-knit community that feels like a home you can always rely on."</em>
+        </p>
+        <div class="testimonial-author">
+          <img src="{% static 'base/member2.jpg' %}" alt="Member 2">
+          <div>
+            <h4>Ahnaf K.</h4>
+            <span>Grade 12, Executive</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <p class="testimonial-text">
+          <em> "DECA created real, innovative life lessons and experiences I still hold close and remember, to this day!" </em>
+        </p>
+        <div class="testimonial-author">
+          <img src="{% static 'base/member3.jpg' %}" alt="Member 3">
+          <div>
+            <h4>Jacob L.</h4>
+            <span>Grade 10, Chapter Executive</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Four Paths Section -->
+<section class="paths">
+  <h2 class="section-title">Choose Your <span>Path</span></h2>
+  <div class="path-grid">
+    <div class="path-card">
+      <i class="fas fa-bullhorn path-icon"></i>
+      <h3>Marketing</h3>
+      <p>Master the art of promotion, branding, and connecting with consumers.</p>
+    </div>
+
+    <div class="path-card">
+      <i class="fas fa-briefcase path-icon"></i>
+      <h3>Business Administration</h3>
+      <p>Develop leadership, organizational, and management skills for the future.</p>
+    </div>
+
+    <div class="path-card">
+      <i class="fas fa-hotel path-icon"></i>
+      <h3>Hospitality</h3>
+      <p>Learn event planning, customer service, and hospitality management.</p>
+    </div>
+
+    <div class="path-card">
+      <i class="fas fa-coins path-icon"></i>
+      <h3>Finance</h3>
+      <p>Gain knowledge in accounting, investment, and financial decision-making.</p>
+    </div>
+  </div>
+</section>
+
+
+{% endblock %}

@@ -1,0 +1,63 @@
+{% extends "base/base.html" %}
+{% load static %}
+
+{% block title %}Executives - Oakridge DECA{% endblock %}
+
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'base/style.css' %}">
+
+<!-- Hero Section -->
+<header class="hero">
+    <div class="hero-overlay">
+        <h1>Executives</h1>
+    </div>
+</header>
+
+<!-- Navigation Tabs -->
+<div class="tabs">
+    {% for team in executives.keys %}
+    <button class="tab {% if forloop.first %}active{% endif %}" onclick="showTeam(event, '{{ team }}')">
+        {{ team }}
+    </button>
+    {% endfor %}
+</div>
+
+<!-- Team Sections -->
+{% for team, members in executives.items %}
+<div id="{{ team }}" class="team-section {% if forloop.first %}active-section{% endif %}">
+    <h1 class="title">{{ team }}</h1>
+    <div class="card-container">
+        {% for person in members %}
+        <div class="card">
+            <div class="avatar"></div>
+            <h2>{{ person.name }}</h2>
+            <p>{{ person.role }}</p>
+        </div>
+        {% empty %}
+        <p>No members yet.</p>
+        {% endfor %}
+    </div>
+</div>
+{% endfor %}
+
+<script>
+function showTeam(event, teamName) {
+    // Hide all sections
+    document.querySelectorAll('.team-section').forEach(section => {
+        section.classList.remove('active-section');
+    });
+
+    // Show selected section
+    document.getElementById(teamName).classList.add('active-section');
+
+    // Update active tab
+    document.querySelectorAll('.tab').forEach(tab => {
+        tab.classList.remove('active');
+    });
+    event.currentTarget.classList.add('active');
+}
+</script>
+
+{% endblock %}
