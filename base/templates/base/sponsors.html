@@ -6,68 +6,77 @@
 {% block content %}
 
 <!-- Hero Section -->
-<section class="hero sponsors-hero">
+<section class="hero">
     <div class="hero-overlay">
         <h1>Sponsors</h1>
     </div>
 </section>
 
-<!-- Who We Are Section -->
-
-<section class="who-we-are">
-    <div class="container">
-        <h2>Who We Are</h2>
-        <div class="who-we-are-content">
-            <div class="text">
-                <p>
-                    Oakridge DECA is a student-led business club dedicated to fostering leadership,
-                    innovation, and career readiness. With dozens of active members, we compete
-                    in case competitions, host school-wide events, and build connections between
-                    students and the local business community.
-                </p>
-                <p>
-                    Supporting Oakridge DECA means investing in the next generation of leaders
-                    who are passionate about business, marketing, finance, and entrepreneurship.
-                </p>
-            </div>
-            <div class="image">
-                <img src="{% static 'base/images/who-we-are.jpg' %}" alt="Oakridge DECA Team">
-            </div>
-        </div>
+<section class="sponsors-hero">
+    <div class="sponsors-intro">
+        <h1>Why Oakridge DECA?</h1>
+        <p>Support future leaders in business, innovation, and community engagement. By partnering with us, you help students compete at regional, provincial, and international levels, while showcasing your commitment to education and youth development.</p>
     </div>
 </section>
 
-<!-- Sponsorship Packages Section -->
-<section class="sponsors-packages">
-    <div class="container">
-        <h2>Sponsorship Packages</h2>
-        <p>Partner with Oakridge DECA and help us create opportunities for students while showcasing your brand. Explore our packages below!</p>
-        
-        <div class="packages-grid">
-            <!-- Poster 1 -->
-            <div class="package-card">
-                <img src="{% static 'base/spons1.png' %}" alt="Sponsorship Package 1">
-                <h3>Gold Sponsorship</h3>
-                <p>Maximum exposure at our events, branding on all promotional materials, and exclusive networking opportunities with students and mentors.</p>
-            </div>
-
-            <!-- Poster 2 -->
-            <div class="package-card">
-                <img src="{% static 'base/sponsor-package-2.png' %}" alt="Sponsorship Package 2">
-                <h3>Silver Sponsorship</h3>
-                <p>Brand placement on select event materials, social media mentions, and recognition on our website.</p>
-            </div>
-        </div>
+<section class="sponsors-posters">
+    <div class="poster-card" onclick="openModal(this)">
+        <img src="{% static 'base/spons1.png' %}" alt="Sponsorship Tiers Poster" data-src="{% static 'base/spons1.png' %}">
+        <p>Who We Are & Why Support Us</p>
+    </div>
+    <div class="poster-card" onclick="openModal(this)">
+        <img src="{% static 'base/spons2.png' %}" alt="Who We Are Poster" data-src="{% static 'base/spons2.png' %}">
+        <p>Sponsorship Tiers & Benefits</p>
     </div>
 </section>
 
-<!-- Call to Action -->
+<!-- Modal for Image Popup -->
+<div id="imageModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="modalImg">
+</div>
+
+
+<section class="sponsors-impact">
+    <div class="impact-card">
+        <h2>50+</h2>
+        <p>Active DECA Members</p>
+    </div>
+    <div class="impact-card">
+        <h2>2+</h2>
+        <p>Competitions Per Year</p>
+    </div>
+    <div class="impact-card">
+        <h2>15+</h2>
+        <p>Provincial Qualifiers</p>
+    </div>
+</section>
+
 <section class="sponsors-cta">
-    <div class="container">
-        <h2>Become a Sponsor Today!</h2>
-        <p>Contact us to learn more about partnership opportunities and how you can support the growth of student leaders at Oakridge DECA.</p>
-        <a href="mailto:deca@oakridge.ca" class="cta-button">Contact Us</a>
-    </div>
+    <p>Interested in partnering with us? Reach out today!</p>
+    <a href="mailto:oakridgedeca25@gmail.ca" class="cta-button">Email Us</a>
 </section>
+
+<script>
+function openModal(element) {
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImg');
+    const imgSrc = element.querySelector('img').getAttribute('data-src');
+    modal.style.display = "block";
+    modalImg.src = imgSrc;
+}
+
+function closeModal() {
+    document.getElementById('imageModal').style.display = "none";
+}
+
+// Close modal if clicked outside the image
+window.onclick = function(event) {
+    const modal = document.getElementById('imageModal');
+    if (event.target === modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
 
 {% endblock %}

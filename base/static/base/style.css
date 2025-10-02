@@ -575,73 +575,6 @@ body {
     margin: 0;
     padding: 0;
 }
-/* ===== General ===== */
-body {
-    margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    line-height: 1.6;
-    color: #1a1a1a;
-}
-
-/* ===== Navbar ===== */
-.navbar {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 1.8rem 5%;
-    background: #fff; /* keep white */
-    position: relative;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-}
-
-.logo {
-    position: absolute;
-    left: 5%;
-}
-
-.logo img {
-    height: 55px;
-}
-
-.nav-links {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2.5rem;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: #004AAD; /* DECA blue text */
-    font-size: 1.1rem;
-    font-weight: 600;
-    position: relative;
-    transition: transform 0.2s ease, color 0.3s ease;
-}
-
-.nav-links a::after {
-    content: "";
-    position: absolute;
-    width: 0%;
-    height: 2px;
-    bottom: -5px;
-    left: 0;
-    background-color: #004AAD;
-    transition: width 0.3s ease;
-}
-
-.nav-links a:hover {
-    transform: translateY(-2px) scale(1.05);
-    color: #02152e;
-}
-
-.nav-links a:hover::after {
-    width: 100%;
-}
-
 /* Tabs */
 .tabs {
     display: flex;
@@ -751,117 +684,170 @@ body {
     transform: scale(1);
 }
 
-/* ===== Who We Are Section ===== */
-.who-we-are {
-    padding: 60px 20px;
-    background-color: #f0f4ff; /* light DECA blue for distinction */
-    text-align: center;
-}
-
-.who-we-are h2 {
-    font-size: 2.6rem;
-    color: #004AAD;
-    margin-bottom: 25px;
-    font-weight: 700;
-}
-
-.who-we-are p {
-    font-size: 1.2rem;
-    color: #1a1a1a;
-    line-height: 1.8;
-    max-width: 900px;
-    margin: 0 auto 20px;
-}
-
-/* ===== Sponsorship Packages Section ===== */
-.sponsors-packages {
+/* ===== Sponsors Hero ===== */
+.sponsors-hero {
+    background: #004AAD10; /* subtle blue tint */
     padding: 80px 20px;
-    background-color: #ffffff;
     text-align: center;
 }
 
-.sponsors-packages h2 {
-    font-size: 2.6rem;
+.sponsors-intro h1 {
+    font-size: 2.8rem;
     color: #004AAD;
     margin-bottom: 20px;
-    font-weight: 700;
 }
 
-.sponsors-packages p {
+.sponsors-intro p {
     font-size: 1.2rem;
     color: #333;
-    margin-bottom: 40px;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
-.package-card {
-    background: #f9f9f9;
+/* ===== Poster Section ===== */
+.sponsors-posters {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin: 60px 0;
+}
+
+.poster-card {
+    background: #fff;
+    padding: 20px;
     border-radius: 16px;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-    padding: 25px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+    width: 280px;
     text-align: center;
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.package-card:hover {
+.poster-card img {
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 15px;
+}
+
+.poster-card:hover {
     transform: translateY(-5px) scale(1.02);
     box-shadow: 0 12px 25px rgba(0,0,0,0.2);
 }
 
-
-.package-card h3 {
-    font-size: 1.6rem;
-    color: #004AAD;
-    margin-bottom: 15px;
+.poster-card p {
     font-weight: 600;
+    color: #004AAD;
 }
 
-.package-card p {
+/* ===== Impact Bar ===== */
+.sponsors-impact {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin: 60px 0;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.impact-card h2 {
+    font-size: 2.5rem;
+    color: #1e40af;
+    margin-bottom: 10px;
+}
+
+.impact-card p {
     font-size: 1.1rem;
     color: #333;
-    line-height: 1.6;
 }
 
-/* ===== Call to Action ===== */
+/* ===== CTA Section ===== */
 .sponsors-cta {
-    padding: 80px 20px;
     text-align: center;
-    background-color: #f0f4ff;
-}
-
-.sponsors-cta h2 {
-    font-size: 2.6rem;
-    color: #004AAD;
-    margin-bottom: 20px;
-    font-weight: 700;
+    padding: 60px 20px;
+    background: #004AAD10;
+    border-radius: 16px;
+    margin-bottom: 0px;
 }
 
 .sponsors-cta p {
-    font-size: 1.2rem;
-    color: #333;
-    margin-bottom: 30px;
+    font-size: 1.3rem;
+    margin-bottom: 25px;
+    font-weight: 500;
 }
 
 .cta-button {
     display: inline-block;
-    padding: 16px 32px;
+    padding: 16px 35px;
     background: #004AAD;
     color: #fff;
-    border-radius: 8px;
+    border-radius: 12px;
+    font-size: 1.2rem;
     font-weight: 600;
-    font-size: 1.1rem;
     text-decoration: none;
-    transition: background 0.3s, transform 0.2s;
+    transition: transform 0.2s, background 0.3s;
 }
 
 .cta-button:hover {
     background: #003580;
-    transform: translateY(-2px) scale(1.02);
+    transform: translateY(-3px) scale(1.03);
 }
+
 
 /* ===== Mobile ===== */
 @media (max-width: 768px) {
-    .sponsors-hero h1 { font-size: 2.2rem; }
-    .who-we-are h2, .sponsors-packages h2, .sponsors-cta h2 { font-size: 2.2rem; }
-    .package-card img { max-width: 250px; }
+    .sponsors-posters, .sponsors-impact {
+        flex-direction: column;
+        align-items: center;
+    }
+    .poster-card, .impact-card {
+        width: 80%;
+    }
+}
+html {
+    scroll-behavior: smooth;
 }
 
+/* ===== Modal Popup ===== */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1000; 
+    padding-top: 60px; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.8); 
+    transition: 0.3s;
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 80%;
+    border-radius: 16px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+    animation: zoomIn 0.3s;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.close:hover {
+    color: #ddd;
+}
+
+@keyframes zoomIn {
+    from {transform: scale(0.7);}
+    to {transform: scale(1);}
+}
