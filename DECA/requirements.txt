@@ -1,5 +1,18 @@
+# Django framework
 Django>=5.0,<6.0
-gunicorn
-psycopg2-binary
-dj-database-url
-whitenoise
+
+# WSGI servers
+# Use Gunicorn for Linux deployment
+gunicorn>=20.1.0
+# Use Waitress for cross-platform / Windows
+waitress>=2.1.2
+
+# Database adapters
+psycopg2-binary>=2.9.6  # For PostgreSQL
+dj-database-url>=1.0.0   # Simplify DATABASE_URL parsing
+
+# Static files
+whitenoise>=6.5.0
+
+# Optional: environment variable management
+django-environ>=0.12.0
