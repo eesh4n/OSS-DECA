@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-b-1!ohx26u_h%(-m6&b68n49215c3e%9o6(f=4e!+a$h4y^(6a'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ["test-deca.onrender.com"]
+ALLOWED_HOSTS = ["test-deca.onrender.com", "oakridgedeca.ca"]
 
 
 # Application definition
