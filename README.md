@@ -122,6 +122,7 @@ MIDDLEWARE = [
 Then run:
 
 python manage.py collectstatic
+
 This ensures your CSS, JS, and image files are available in production.
 
 ### 🧰 Tech Stack
@@ -131,11 +132,6 @@ Production WSGI Server
 Whitenoise Static File Management
 Rendee Cloud hosting
 
-💡 Tips for a Professional Repo
-✅ Use clear commit messages
-✅ Add screenshots or demo GIFs in this README
-✅ Keep all secrets in .env
-✅ Test on mobile before deployment
 ✅ Run python manage.py check --deploy before pushing live
 
 🏁 License
