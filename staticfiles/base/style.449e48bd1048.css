@@ -101,7 +101,7 @@ body {
 
 /* ===== Hero ===== */
 .hero {
-    background: url('/static/base/DECA-group-edit-2024-25.png') center 25%/cover no-repeat;
+    background: url("/static/base/DECA-group-edit-2024-25.e52d7a365b72.png") center 25%/cover no-repeat;
     height: 30vh;
     position: relative;
     min-height: 200px;
@@ -508,7 +508,7 @@ body {
 .card:nth-child(4) { animation-delay: 0.4s; }
 .card:nth-child(5) { animation-delay: 0.5s; }
 
-.avatar { width: 110px; height: 110px; margin: 0 auto 18px; border-radius: 50%; background: url("/static/base/download.jpeg") center/cover no-repeat; border: 5px solid white; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.avatar { width: 110px; height: 110px; margin: 0 auto 18px; border-radius: 50%; background: url("/static/base/download.0fa033ef8d46.jpeg") center/cover no-repeat; border: 5px solid white; transition: transform 0.3s ease, box-shadow 0.3s ease; }
 
 /* Section transitions */
 .team-section { opacity: 0; transform: scale(0.98); transition: all 0.4s ease; display: none; }
@@ -525,126 +525,6 @@ body {
 .sponsors-impact { display: flex; justify-content: center; gap: 40px; margin: 60px 0; flex-wrap: wrap; text-align: center; }
 .impact-card h2 { font-size: 2.5rem; color: #1e40af; margin-bottom: 10px; }
 .impact-card p { font-size: 1.1rem; color: #333; }
-
-.sponsors-section {
-    padding: 40px 0px;
-    background: #f8faff;
-    text-align: center;
-}
-
-/* TITLE */
-.sponsors-title {
-    font-size: 2.8rem;
-    font-weight: 900;
-    color: #003E8F;
-    margin-bottom: 60px;
-}
-
-/* NEW LAYOUT: TWO COLUMNS */
-.two-sponsors {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    flex-wrap: wrap;
-    perspective: 1200px; /* for 3D tilt */
-}
-
-/* CARD - upgraded for "pop" */
-.sponsor-card {
-    background: linear-gradient(180deg, #ffffff, #fbfdff);
-    border-radius: 20px;
-    padding: 45px 50px;
-    width: 350px;
-    height: 230px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-    box-shadow:
-        0 6px 18px rgba(0,0,0,0.08),
-        0 2px 6px rgba(0,0,0,0.04) inset;
-    transition: transform .45s cubic-bezier(.2,.9,.2,1), box-shadow .45s, filter .35s;
-    transform-style: preserve-3d;
-    position: relative;
-    overflow: visible;
-}
-
-/* thin colored accent bar */
-.sponsor-card::before{
-    content: "";
-    position: absolute;
-    left: 16px;
-    right: 16px;
-    top: 12px;
-    height: 6px;
-    border-radius: 6px;
-    background: linear-gradient(90deg, #00a3ff, #004aad 60%, #00e6a8);
-    opacity: 0.95;
-    transform-origin: center;
-    transition: transform .45s, opacity .45s;
-    box-shadow: 0 6px 18px rgba(0,74,173,0.07);
-}
-
-/* hover pop + glow */
-.sponsor-card:hover{
-    transform: translateY(-12px) scale(1.06) translateZ(30px);
-    box-shadow:
-        0 22px 50px rgba(0,74,173,0.18),
-        0 6px 18px rgba(0,0,0,0.06);
-    filter: saturate(1.08) brightness(1.02);
-}
-.sponsor-card:hover::before { transform: scaleX(1.05); opacity: 1; }
-
-/* Logo style */
-.sponsor-card img {
-    width: auto;
-    max-width: 45%;
-    height: auto;
-    object-fit: contain;
-    display: inline-block;
-    filter: grayscale(85%) contrast(0.95) brightness(0.98);
-    transition: filter .35s ease, transform .35s ease;
-}
-
-/* logos reveal on hover */
-.sponsor-card:hover img {
-    filter: none;
-    transform: scale(1.02);
-}
-
-/* entrance animation */
-.two-sponsors .sponsor-card { opacity: 0; transform: translateY(18px) scale(.99); animation: cardIn .6s forwards; }
-.two-sponsors .sponsor-card:nth-child(1){ animation-delay: .12s; }
-.two-sponsors .sponsor-card:nth-child(2){ animation-delay: .22s; }
-.two-sponsors .sponsor-card:nth-child(3){ animation-delay: .32s; }
-.two-sponsors .sponsor-card:nth-child(4){ animation-delay: .42s; }
-
-@keyframes cardIn { to { opacity: 1; transform: translateY(0) scale(1); } }
-
-/* MOBILE */
-@media (max-width: 600px) {
-    .sponsor-card {
-        width: 85%;
-        height: auto;
-        padding: 35px 30px;
-    }
-    .two-sponsors { gap: 30px; }
-    .sponsor-card img { max-width: 40%; }
-}
-
-
-/* Mobile responsive */
-@media (max-width: 768px) {
-    .sponsors-grid {
-        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-        gap: 20px;
-    }
-
-    .sponsor-card img {
-        max-width: 100px;
-    }
-}
-
 
 /* ===== CTA Section ===== */
 .sponsors-cta { text-align: center; padding: 60px 20px; background: #004AAD10; border-radius: 16px; margin-bottom: 0px; }

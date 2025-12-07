@@ -6,9 +6,24 @@
 {% block content %}
 
 <!-- Hero Section -->
+ 
 <section class="hero">
     <div class="hero-overlay">
         <h1>Sponsors</h1>
+    </div>
+</section>
+
+<section class="sponsors-section">
+    <h2 class="sponsors-title">Our Sponsors</h2>
+
+    <div class="two-sponsors">
+        <a href="https://insboutique.com/" target="_blank" class="sponsor-card">
+            <img src="{% static 'base/logo.png' %}" alt="Sponsor 1 Logo">
+        </a>
+
+        <a href="https://rev3k.com/" target="_blank" class="sponsor-card">
+            <img src="{% static 'base/logo2.png' %}" alt="Sponsor 2 Logo">
+        </a>
     </div>
 </section>
 
@@ -21,11 +36,11 @@
 
 <section class="sponsors-posters">
     <div class="poster-card" onclick="openModal(this)">
-        <img src="{% static 'base/spons1.png' %}" alt="Sponsorship Tiers Poster" data-src="{% static 'base/spons1.png' %}">
+        <img src="{% static 'base/spons2.jpg' %}" alt="Sponsorship Tiers Poster" data-src="{% static 'base/spons2.jpg' %}">
         <p>Who We Are & Why Support Us</p>
     </div>
     <div class="poster-card" onclick="openModal(this)">
-        <img src="{% static 'base/spons2.png' %}" alt="Who We Are Poster" data-src="{% static 'base/spons2.png' %}">
+        <img src="{% static 'base/spons1.png' %}" alt="Who We Are Poster" data-src="{% static 'base/spons1.png' %}">
         <p>Sponsorship Tiers & Benefits</p>
     </div>
 </section>
@@ -35,7 +50,6 @@
     <span class="close" onclick="closeModal()">&times;</span>
     <img class="modal-content" id="modalImg">
 </div>
-
 
 <section class="sponsors-impact">
     <div class="impact-card">
@@ -55,6 +69,8 @@
 <section class="sponsors-cta">
     <p><strong>Interested in partnering with us? Reach out today! </strong></p>
 </section>
+
+
 
 <script>
 function openModal(element) {
@@ -76,6 +92,21 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 }
+
+// Tilt / parallax effect for sponsor cards
+document.querySelectorAll('.sponsor-card').forEach(card => {
+  card.addEventListener('mousemove', (e) => {
+    const rect = card.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width - 0.5;
+    const y = (e.clientY - rect.top) / rect.height - 0.5;
+    const rx = (-y) * 6; // rotateX
+    const ry = (x) * 8;  // rotateY
+    card.style.transform = `translateY(-10px) scale(1.06) rotateX(${rx}deg) rotateY(${ry}deg)`;
+  });
+  card.addEventListener('mouseleave', () => {
+    card.style.transform = '';
+  });
+});
 </script>
 
 {% endblock %}
